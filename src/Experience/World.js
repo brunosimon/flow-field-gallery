@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import Experience from './Experience.js'
+import Picture from './Picture/Picture.js'
 
 export default class World
 {
@@ -14,18 +15,14 @@ export default class World
         {
             if(_group.name === 'base')
             {
-                this.setDummy()
+                this.setPicture()
             }
         })
     }
 
-    setDummy()
+    setPicture()
     {
-        const cube = new THREE.Mesh(
-            new THREE.BoxGeometry(1, 1, 1),
-            new THREE.MeshBasicMaterial({ map: this.resources.items.lennaTexture })
-        )
-        this.scene.add(cube)        
+        this.picture = new Picture()
     }
 
     resize()
@@ -34,6 +31,8 @@ export default class World
 
     update()
     {
+        if(this.picture)
+            this.picture.update()
     }
 
     destroy()

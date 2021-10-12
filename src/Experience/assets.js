@@ -4,7 +4,7 @@ export default [
         data: {},
         items:
         [
-            { name: 'lennaTexture', source: '/assets/lenna.png', type: 'texture' },
+            { name: 'imageTexture', source: '/assets/image1.jpg', type: 'texture' },
         ]
     }
 ]
